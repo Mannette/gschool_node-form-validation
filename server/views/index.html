@@ -7,8 +7,39 @@
 
   <div class="container">
 
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
+    <h1>{{ puppy }}</h1>
+    {% for error in errors %}
+    <div class="alert alert-danger" role="alert">
+      <p>
+        {{ error }}
+      </p>
+    </div>
+    {% endfor %}
+    <br><br><br>
+
+  <form action="/puppies" method="post">
+    Name:<br>
+    <input type="text" class="form-control" name="dogName" placeholder="ex: Mickey">
+    <br><br>
+    ID:<br>
+    <input type="text" class="form-control" name="dogID" placeholder="ex: 903">
+    <br><br>
+    <input type="submit" class="btn btn-default" value="Create Puppy">
+  </form>
+  <br><br><br>
+  <h1>{{ person }}</h1>
+
+  <form action="/people" method="post">
+    Name:<br>
+    <input type="text" class="form-control" name="personName" placeholder="ex: Mouse">
+    <br><br>
+    Hobby:<br>
+    <input type="text" class="form-control" name="personHobby" placeholder="ex: tennis">
+    <br><br>
+    <input type="submit" class="btn btn-default" value="Create Person">
+  </form>
+
+
 
   </div>
 

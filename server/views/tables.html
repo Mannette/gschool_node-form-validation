@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+
+  <h1>{{ puppy }}</h1>
+  <div class="alert alert-success" role="alert">
+    <p>{{ success }}</p>
+  </div>
+  <br><br><br>
+
+  <table class="table table-striped table-condensed">
+    <tr>
+      <th>Puppy Name</th>
+      <th>Puppy ID</th>
+    </tr>
+    {% for puppy in puppies %}
+    <tr>
+      <td>
+        {{ puppy.name }}
+      </td>
+      <td>
+        {{ puppy.ID }}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <br><br>
+  <h1>{{ person }}</h1>
+
+  <br><br><br>
+
+  <table class="table table-striped table-condensed">
+    <tr>
+      <th>Person Name</th>
+      <th>Hobby</th>
+    </tr>
+    {% for person in people %}
+    <tr>
+      <td>
+        {{ person.name }}
+      </td>
+      <td>
+        {{ person.hobby }}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <br><br>
+  <a href="/"><input type="button" class="btn btn-default" value="Add another?"></a>
+
+</div>
+
+{% endblock %}
