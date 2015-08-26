@@ -33,15 +33,15 @@ router.post('/puppies', function (req, res, next) {
       name: puppyName,
       ID: puppyID
     });
-  }
 
-  res.render('tables', {
-    puppy: 'Showing Puppies',
-    person: 'Showing People',
-    puppies: dogArr,
-    people: peopleArr,
-    success: 'Your item was saved successfully!'
-  });
+    res.render('tables', {
+      puppy: 'Showing Puppies',
+      person: 'Showing People',
+      puppies: dogArr,
+      people: peopleArr,
+      success: 'Your item was saved successfully!'
+    });
+  }
 
 });
 
@@ -62,15 +62,16 @@ router.post('/people', function (req, res, next) {
       name: personName,
       hobby: personHobby
     });
+
+    res.render('tables', {
+      puppy: 'Showing Puppies',
+      person: 'Showing People',
+      people: peopleArr,
+      puppies: dogArr,
+      success: 'Your item was saved successfully!'
+    });
   }
 
-  res.render('tables', {
-    puppy: 'Showing Puppies',
-    person: 'Showing People',
-    people: peopleArr,
-    puppies: dogArr,
-    success: 'Your item was saved successfully!'
-  });
 });
 
 function puppyValidation (dogName, dogID) {
